@@ -1,0 +1,7 @@
+Java Version = 22.0.2
+JDK = 1.8.0
+JRE = 1.8.0
+Jasper Reports = 7.0.1
+JCalendar jar = 1.4
+MySQL Connector = 8.0.17
+rs2xml jar = 1.0
