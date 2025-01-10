@@ -368,21 +368,19 @@ public class StudentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
     private void btnDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete1ActionPerformed
-        if(valStudent()){
-            String StId = txtStId.getText();
-        
-            try{
-                Connection con = DBConnection.getCon();
-                Statement st = con.createStatement();
-                st.executeUpdate("DELETE FROM tblstudent WHERE StudentId = '"+StId+"'");
-                JOptionPane.showMessageDialog(this, "Successfully Deleted!");
-                loadStudent();
+        String StId = txtStId.getText();
+    
+        try{
+            Connection con = DBConnection.getCon();
+            Statement st = con.createStatement();
+            st.executeUpdate("DELETE FROM tblstudent WHERE StudentId = '"+StId+"'");
+            JOptionPane.showMessageDialog(this, "Successfully Deleted!");
+            loadStudent();
 
-                con.close();
-            }
-            catch(SQLException e){
-                JOptionPane.showMessageDialog(this, "Failed to delete!");
-            }
+            con.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "Failed to delete!");
         }
     }//GEN-LAST:event_btnDelete1ActionPerformed
 
