@@ -336,21 +336,19 @@ public class BookForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdate2ActionPerformed
 
     private void btnDelete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete2ActionPerformed
-        if(valBook()){
-            String BookId = txtBookId.getText();
-        
-            try{
-                Connection con = DBConnection.getCon();
-                Statement st = con.createStatement();
-                st.executeUpdate("DELETE FROM tblbook WHERE BookId = '"+BookId+"'");
-                JOptionPane.showMessageDialog(this, "Successfully Deleted!");
-                loadBook();
+        String BookId = txtBookId.getText();
+    
+        try{
+            Connection con = DBConnection.getCon();
+            Statement st = con.createStatement();
+            st.executeUpdate("DELETE FROM tblbook WHERE BookId = '"+BookId+"'");
+            JOptionPane.showMessageDialog(this, "Successfully Deleted!");
+            loadBook();
 
-                con.close();
-            }
-            catch(SQLException e){
-                JOptionPane.showMessageDialog(this, "Failed to delete!");
-            }
+            con.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "Failed to delete!");
         }
     }//GEN-LAST:event_btnDelete2ActionPerformed
 
