@@ -428,7 +428,7 @@ public class HomeForm extends javax.swing.JFrame {
             String reportPath = "C:\\Users\\abc\\JaspersoftWorkspace\\MyReports\\LibMng.jrxml";            
             JasperReport jr = JasperCompileManager.compileReport(reportPath);            
             JasperPrint jp = JasperFillManager.fillReport(jr, null,con);            
-            JasperViewer.viewReport(jp); 
+            JasperViewer.viewReport(jp, false); 
             con.close();            
         }catch(ClassNotFoundException | SQLException | JRException e){
             System.out.println(e);
