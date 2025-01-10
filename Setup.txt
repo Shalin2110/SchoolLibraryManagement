@@ -4,4 +4,9 @@ JRE = 1.8.0
 Jasper Reports = 7.0.1
 JCalendar jar = 1.4
 MySQL Connector = 8.0.17
+MySQL = 8.0
 rs2xml jar = 1.0
+
+LoginForm:
+Username = TestUser1
+Password = 12345
