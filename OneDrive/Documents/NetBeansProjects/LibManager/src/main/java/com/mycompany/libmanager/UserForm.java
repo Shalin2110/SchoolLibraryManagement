@@ -300,21 +300,19 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdate3ActionPerformed
 
     private void btnDelete3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete3ActionPerformed
-        if(valUser()){
-            String UserId = txtUserId.getText();
-        
-            try{
-                Connection con = DBConnection.getCon();
-                Statement st = con.createStatement();
-                st.executeUpdate("DELETE FROM tbluser WHERE UserId = '"+UserId+"'");
-                JOptionPane.showMessageDialog(this, "Successfully Deleted!");
-                loadUser();
+        String UserId = txtUserId.getText();
+    
+        try{
+            Connection con = DBConnection.getCon();
+            Statement st = con.createStatement();
+            st.executeUpdate("DELETE FROM tbluser WHERE UserId = '"+UserId+"'");
+            JOptionPane.showMessageDialog(this, "Successfully Deleted!");
+            loadUser();
 
-                con.close();
-            }
-            catch(SQLException e){
-                JOptionPane.showMessageDialog(this, "Failed to delete!");
-            }
+            con.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(this, "Failed to delete!");
         }
     }//GEN-LAST:event_btnDelete3ActionPerformed
 
